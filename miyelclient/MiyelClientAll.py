@@ -6,7 +6,7 @@ import webbrowser as wb
 
 os.system('@echo OFF')
 os.system('title Miyel Injected')
-#os.system('mode 100,45')
+os.system('mode 100,45')
 os.system('color 0D')
 
 def clearcon():
