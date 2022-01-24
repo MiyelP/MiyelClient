@@ -159,14 +159,14 @@ def rmenu():
         print("  --                                      --")
         print("----------------------------------------------")
         lomo = input('Presione la letra del metodo elegido: ')
-        if lomo == 'R':
+        if lomo.lower() == 'R'.lower():
             registrarse()
-        elif lomo == 'L':
+        elif lomo.lower() == 'L'.lower():
             login()
-        elif lomo == 'S':
+        elif lomo.lower() == 'S'.lower():
             exitme()
         else:
-            if lomo != 'R' or lomo != 'L' or lomo != 'S':
+            if lomo.lower() != 'R'.lower() or lomo.lower() != 'L'.lower() or lomo.lower() != 'S'.lower():
                 nerror()
     
     def registrarse():
@@ -249,12 +249,12 @@ def rmenu():
                         print('¡ Usuario no Existe !')
                         print('¿ Desea Crear uno nuevo ?')
                         erradan = input('Presione R para registrarse o S para salir: ')
-                        if erradan == "R":
+                        if erradan.lower() == "R".lower():
                             registrarse()
-                        elif erradan == "S":
+                        elif erradan.lower() == "S".lower():
                             exit()
                         else:
-                            if erradan != 'R' or erradan != 'S':
+                            if erradan.lower() != 'R'.lower() or erradan.lower() != 'S'.lower():
                                 nerror()
 
             def searchc(cla):
