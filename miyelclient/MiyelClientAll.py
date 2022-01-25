@@ -4,6 +4,8 @@ import time
 import os
 import pwinput
 import webbrowser as wb
+from datetime import datetime, date, time, timedelta
+import calendar
 
 os.system('@echo OFF')
 os.system('title Miyel Injected')
@@ -178,6 +180,9 @@ def rmenu():
             clave = pwinput.pwinput(prompt=str('Cual es tu contraseña: '), mask=(str('*')))
             message = clave.encode()
             codigo = hashlib.sha256(message).hexdigest()
+            ahora = datetime.now()
+            formato_fecha = "%Y-%m-%d %H:%M:%S"
+            fecha = ahora.strftime(formato_fecha)
             if not os.path.isfile(ruta_archivo):
                 user_admin = {
                         "usuarios": [
@@ -185,7 +190,8 @@ def rmenu():
                                         "Nombre": "Administrador",
                                         "Edad": 99,
                                         "Usuario": "admin",
-                                        "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" # 123456
+                                        "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", # 123456
+                                        "Fecha Alta": "2022-01-25 16:05:00"
                                     }
                                 ]
                 }
@@ -204,7 +210,8 @@ def rmenu():
                             "Nombre": nombre, 
                             "Edad": edad, 
                             "Usuario": nickname, 
-                            "Clave": codigo
+                            "Clave": codigo,
+                            "Fecha": fecha
                             }
                         )
                         data["usuarios"] = temp_list
