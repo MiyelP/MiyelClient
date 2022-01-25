@@ -224,7 +224,7 @@ def rmenu():
         with open(ruta_archivo, "r") as jsondata:
             items = json.load(jsondata)
             loginn = input('Nombre de usuario de Minecraft: ')
-            loginc = pwinput.pwinput(prompt=str('Contraseña: '), mask=(str('*'))) 
+            loginc = pwinput.pwinput(prompt=str('Contraseñal: '), mask=(str('*'))) 
             ml = loginc.encode()
             ccl = hashlib.sha256(ml).hexdigest()
             def searchn(name):
