@@ -4,8 +4,8 @@ import time
 import os
 import pwinput
 import webbrowser as wb
-from datetime import datetime, date, time, timedelta
-import calendar
+from datetime import datetime, time, timedelta
+import time as t
 
 os.system('@echo OFF')
 os.system('title Miyel Injected')
@@ -21,7 +21,7 @@ def clearcon():
 def nerror():
     clearcon()
     print('Introdujo mal los caracteres')
-    time.sleep(2)
+    t.sleep(2)
     exit
 
 def Inicio():
@@ -36,7 +36,7 @@ def Inicio():
     print()
     print('              [x   ]')
     print()
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print()
     print()
@@ -48,7 +48,7 @@ def Inicio():
     print()
     print('              [xx  ]')
     print()
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print()
     print()
@@ -60,7 +60,7 @@ def Inicio():
     print()
     print('              [xxx ]')
     print()
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print()
     print()
@@ -72,7 +72,7 @@ def Inicio():
     print()
     print('              [xxxx]')
     print()
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
 
 
@@ -119,7 +119,7 @@ def exitme():
     print('              [x   ]')
     print('')
     print('')
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print('')
     print('')
@@ -128,7 +128,7 @@ def exitme():
     print('              [xx  ]')
     print('')
     print('')
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print('')
     print('')
@@ -137,7 +137,7 @@ def exitme():
     print('              [xxx ]')
     print('')
     print('')
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     print('')
     print('')
@@ -146,7 +146,7 @@ def exitme():
     print('              [xxxx]')
     print('')
     print('')
-    time.sleep(1)
+    t.sleep(1)
     clearcon()
     exit()
 
@@ -191,7 +191,7 @@ def rmenu():
                                         "Edad": 99,
                                         "Usuario": "admin",
                                         "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", # 123456
-                                        "Fecha Alta": "2022-01-25 16:05:00"
+                                        "Fecha_Alta": "2022-01-25 16:05:00"
                                     }
                                 ]
                 }
@@ -211,7 +211,7 @@ def rmenu():
                             "Edad": edad, 
                             "Usuario": nickname, 
                             "Clave": codigo,
-                            "Fecha": fecha
+                            "Fecha_Alta": fecha
                             }
                         )
                         data["usuarios"] = temp_list
@@ -223,7 +223,7 @@ def rmenu():
             agregar_registro()
             clearcon()
             print("Hola " + nickname)
-            time.sleep(3)
+            t.sleep(3)
             allmenu()
 
     def login():
@@ -433,7 +433,7 @@ def ai():
     os.system('for /f "tokens=3" %%a in (sc queryex "Dnscache" ^| findstr "PID") do (set pid=%%a)')
     os.system('wmic process where ProcessId=%pid% CALL setpriority "realtime"')
     os.system('ipconfig /flushdns')
-    time.sleep(2)
+    t.sleep(2)
     tcpl()
 
 
@@ -478,7 +478,7 @@ def reach():
     os.system('color 7b')
     os.system('netstat -e')
     print('Ahora tiene op reach :^) !')
-    time.sleep(2)
+    t.sleep(2)
     tcpc()
 
 def miyel():
@@ -495,7 +495,7 @@ def miyel():
     os.system('wmic process where name="mqtgsvc.exe" CALL setpriority "high priority"')
     os.system('wmic process where name="javaw.exe" CALL setpriority "realtime"')
     os.system('netsh interface tcp set global autotuning=restricted')
-    time.sleep(2)
+    t.sleep(2)
     clearcon()
 
     os.system("netsh int tcp set global chimney=enable")
@@ -526,13 +526,13 @@ def miyel():
     os.system('regedit /s SG_Vista_TcpIp_Patch.reg')
     os.system('del SG_Vista_TcpIp_Patch.reg')
     os.system('ipconfig /flushdns')
-    time.sleep(2)
+    t.sleep(2)
     clearcon()
 
     os.system('netsh interface tcp set global autotuning=normal')
     os.system('netsh interface tcp set global autotuning=restricted')
     os.system('netsh interface tcp show global')
-    time.sleep(2)
+    t.sleep(2)
     clearcon()
     tcpc()
 
@@ -574,7 +574,7 @@ def prm():
     os.system('pause>nul')
     os.system('wmic process where name="javaw.exe" CALL setpriority "realtime"')
     print('Listo pibe')
-    time.sleep(2)
+    t.sleep(2)
     fpsmenu()
 
 def oweb():
