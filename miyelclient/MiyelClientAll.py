@@ -231,18 +231,6 @@ def rmenu():
                 for attrs in items['usuarios']:
                     if name.lower() in attrs['Usuario'].lower():
                         return attrs['Clave']
-                    # else:
-                    #     clearcon()
-                    #     print('¡ Usuario no Existe !')
-                    #     print('¿ Desea Crear uno nuevo ?')
-                    #     erradan = input('Presione R para registrarse o S para salir: ')
-                    #     if erradan == "R":
-                    #         registrarse()
-                    #     elif erradan == "S":
-                    #         exit
-                    #     else:
-                    #         if erradan != 'R' or erradan != 'S':
-                    #             nerror()
             if (searchn(loginn) != None):
                 allmenu()
             else:
@@ -265,18 +253,6 @@ def rmenu():
                             ccl = attrs['Clave']
                             print("Contraseña Correcta")
                             allmenu()
-                        # else:
-                        #     clearcon()
-                        #     print('¡ Usuario no Existe !')
-                        #     print('¿ Desea Crear uno nuevo ?')
-                        #     erradac = input('Presione R para registrarse o S para salir: ')
-                        #     if erradac == "R":
-                        #         registrarse()
-                        #     elif erradac == "S":
-                        #         exit
-                        #     else:
-                        #         if erradac != 'R' or erradac != 'S':
-                        #             nerror()
             if (searchc(ccl) != None):
                 allmenu()
             else:
@@ -295,123 +271,6 @@ def rmenu():
     lomenu()    
 rmenu()
         
-    # elif loginse == 'R':
-        # def registrarse():
-        #     clearcon()
-        #     nombre = input('Cual es tu nombre: ')
-        #     edad = int(input('Cual es tu edad: '))
-        #     nickname = input('Cual es el nombre dentro de Minecraft: ')
-        #     clave = input('Cual es tu contraseña: ')
-        #     message = clave.encode()
-        #     codigo = hashlib.sha256(message).hexdigest()
-        #     if not os.path.isfile(ruta_archivo):
-        #         user_admin = {
-        #                 "usuarios": [
-        #                             {
-        #                                 "Nombre": "Administrador",
-        #                                 "Edad": 99,
-        #                                 "Usuario": "admin",
-        #                                 "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" # 123456
-        #                             }
-        #                         ]
-        #         }
-        #         with open(ruta_archivo, 'w') as file:
-        #             json.dump(user_admin, file, indent=4)
-        #     def agregar_registro():
-        #         a_dict = {}
-        #         try:
-        #             with open(ruta_archivo) as data_file:    
-        #                 data = json.load(data_file)
-        #                 temp_list = []
-        #                 for dicObj in data["usuarios"]:
-        #                     temp_list.append(dicObj)
-        #                 temp_list.append(
-        #                     {
-        #                     "Nombre": nombre, 
-        #                     "Edad": edad, 
-        #                     "Usuario": nickname, 
-        #                     "Clave": codigo
-        #                     }
-        #                 )
-        #                 data["usuarios"] = temp_list
-        #                 a_dict["usuarios"] = data["usuarios"]
-        #                 with open(ruta_archivo,'w') as f:
-        #                     f.write(json.dumps(a_dict, indent=4))
-        #         except IOError as io:
-        #             print ("ERROR: "), io
-        #     agregar_registro()
-        #     clearcon()
-        #     print("Hola " + nickname)
-        #     time.sleep(3)
-        #registrarse()
-    #else:
-        #if loginse != 'L' or loginse != 'C':
-        #  nerror()
-# def exitme():
-#     clearcon()
-#     print()
-#     print()
-#     print('               EXIT')
-#     print('')
-#     print('              [x   ]')
-#     print('')
-#     print('')
-#     time.sleep(1)
-#     clearcon()
-#     print('')
-#     print('')
-#     print('               EXIT')
-#     print('')
-#     print('              [xx  ]')
-#     print('')
-#     print('')
-#     time.sleep(1)
-#     clearcon()
-#     print('')
-#     print('')
-#     print('               EXIT')
-#     print('')
-#     print('              [xxx ]')
-#     print('')
-#     print('')
-#     time.sleep(1)
-#     clearcon()
-#     print('')
-#     print('')
-#     print('               EXIT')
-#     print('')
-#     print('              [xxxx]')
-#     print('')
-#     print('')
-#     time.sleep(1)
-#     clearcon()
-#     exit
-
-
-# def allmenu():
-#     clearcon()
-#     os.system('color 0D')
-#     print('-----------------------------------------------------------------------')
-#     print('  --                                                               --')
-#     print('  --   [1] Pon "1" Si quieres Menu TCP (Internet method)           --')
-#     print('  --   [2] Pon "2" Si quieres Menu FPS (Fps method)                --')
-#     print('  --   [3] Pon "3" Si quieres entrar a la web oficial de Miyel     --')
-#     print('  --   [4] Pon "4" Si quieres salir del cliente                    --')
-#     print('  --                                                               --')
-#     print(' ----------------------------------------------------------------------')
-#     modo1 = int(input('Preciona el numero del metodo elegido: '))
-#     if modo1 == 1:
-#         tcpselect()
-#     elif modo1 == 2:
-#         fpsmenu()
-#     elif modo1 == 3:
-#         oweb()
-#     elif modo1 == 4:
-#         exitme()
-#     else:
-#         if modo1 != 1 or modo1 != 2 or modo1 != 3 or modo1 !=4:
-#             nerror()
-
 def tcpselect():
     clearcon()
     os.system('color 0D')
