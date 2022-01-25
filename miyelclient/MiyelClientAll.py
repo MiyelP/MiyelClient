@@ -2,6 +2,7 @@ import json
 import hashlib
 import time
 import os
+import pwinput
 import webbrowser as wb
 
 os.system('@echo OFF')
@@ -174,7 +175,7 @@ def rmenu():
             nombre = input('Cual es tu nombre: ')
             edad = int(input('Cual es tu edad: '))
             nickname = input('Cual es el nombre dentro de Minecraft: ')
-            clave = input('Cual es tu contraseña: ')
+            clave = pwinput.pwinput(prompt=str('Cual es tu contraseña: '), mask=(str('*')))
             message = clave.encode()
             codigo = hashlib.sha256(message).hexdigest()
             if not os.path.isfile(ruta_archivo):
@@ -223,7 +224,7 @@ def rmenu():
         with open(ruta_archivo, "r") as jsondata:
             items = json.load(jsondata)
             loginn = input('Nombre de usuario de Minecraft: ')
-            loginc = input('Contraseña: ')
+            loginc = pwinput.pwinput(prompt=str('Contraseña: '), mask=(str('*'))) 
             ml = loginc.encode()
             ccl = hashlib.sha256(ml).hexdigest()
             def searchn(name):
