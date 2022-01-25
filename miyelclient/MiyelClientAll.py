@@ -270,18 +270,17 @@ def rmenu():
             
     lomenu()    
 rmenu()
-        
 def tcpselect():
     clearcon()
     os.system('color 0D')
     print('Modo')
     modom = input('Pon L para el modo legal o pon C para modo cheat: ')
-    if modom == 'L':
+    if modom.lower() == 'L'.lower():
         tcpl()
-    elif modom == 'C':
+    elif modom.lower() == 'C'.lower():
         tcpc()
     else:
-        if modom != 'L' or modom != 'C':
+        if modom.lowe() != 'L'.lower() or modom.lower() != 'C'.lower():
             nerror()
 
 
@@ -348,7 +347,7 @@ def tcpc():
 def cheatme2():
     print('??????????????????????????xxx??????????????????????????')
     modo34 = input('Ups hackeaste el systema but enter cheat key: ')
-    if modo34 == 'miyelcheat':
+    if modo34 == 'miyelcheat'.lower():
         cheatme()
     else:
         exit
