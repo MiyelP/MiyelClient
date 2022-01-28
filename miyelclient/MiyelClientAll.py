@@ -1,6 +1,6 @@
 import json
 import hashlib
-import time
+import msvcrt
 import os
 import pwinput
 import webbrowser as wb
@@ -177,26 +177,41 @@ def rmenu():
             nombre = input('Cual es tu nombre: ')
             edad = int(input('Cual es tu edad: '))
             nickname = input('Cual es el nombre dentro de Minecraft: ')
-            clave = pwinput.pwinput(prompt=str('Cual es tu contraseña: '), mask=(str('*')))
-            message = clave.encode()
-            codigo = hashlib.sha256(message).hexdigest()
-            ahora = datetime.now()
-            formato_fecha = "%Y-%m-%d %H:%M:%S"
-            fecha = ahora.strftime(formato_fecha)
-            if not os.path.isfile(ruta_archivo):
-                user_admin = {
-                        "usuarios": [
-                                    {
-                                        "Nombre": "Administrador",
-                                        "Edad": 99,
-                                        "Usuario": "admin",
-                                        "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", # 123456
-                                        "Fecha_Alta": "2022-01-25 16:05:00"
-                                    }
-                                ]
-                }
-                with open(ruta_archivo, 'w') as file:
-                    json.dump(user_admin, file, indent=4)
+            with open(ruta_archivo, "r") as jsondata:
+                items = json.load(jsondata)
+                def searchn(name):
+                    for attrs in items['usuarios']:
+                        if name.lower() in attrs['Usuario'].lower():
+                            return attrs['Clave']
+                if (searchn(nickname) != None):
+                    print('¡ Usuario no Existe !')
+                    print('')
+                    print('Presione Espacio para Continuar')
+                    key = None
+                    while key != ' ':
+                        key = msvcrt.getwch()
+                    lomenu()
+                else:
+                    clave = pwinput.pwinput(prompt=str('Cual es tu contraseña: '), mask=(str('*')))
+                    message = clave.encode()
+                    codigo = hashlib.sha256(message).hexdigest()
+                    ahora = datetime.now()
+                    formato_fecha = "%Y-%m-%d %H:%M:%S"
+                    fecha = ahora.strftime(formato_fecha)
+                    if not os.path.isfile(ruta_archivo):
+                        user_admin = {
+                                "usuarios": [
+                                            {
+                                                "Nombre": "Administrador",
+                                                "Edad": 99,
+                                                "Usuario": "admin",
+                                                "Clave": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92", # 123456
+                                                "Fecha_Alta": "2022-01-25 16:05:00"
+                                            }
+                                        ]
+                        }
+            #with open(ruta_archivo, 'w') as file:
+            #    json.dump(user_admin, file, indent=4)
             def agregar_registro():
                 a_dict = {}
                 try:
